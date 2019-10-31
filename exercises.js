@@ -923,5 +923,16 @@ const GUEST_LIST = {
 // The strings can contain white space or any type of characters.
 
 function numInStr(arr) {
+    let numStr = []
+    let hasNumber = /\d/;
 
+    for (let i = 0; i < arr.length; i++) {
+        if (hasNumber.test(arr[i])) {
+            numStr.push(arr[i])
+        }
+    }
+
+    return numStr
 }
+
+console.log(numInStr(["1a", "a", "2b", "b"]))
