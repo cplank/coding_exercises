@@ -922,17 +922,47 @@ const GUEST_LIST = {
 
 // The strings can contain white space or any type of characters.
 
-function numInStr(arr) {
-    let numStr = []
-    let hasNumber = /\d/;
+// function numInStr(arr) {
+//     let numStr = []
+//     let hasNumber = /\d/;
 
-    for (let i = 0; i < arr.length; i++) {
-        if (hasNumber.test(arr[i])) {
-            numStr.push(arr[i])
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         if (hasNumber.test(arr[i])) {
+//             numStr.push(arr[i])
+//         }
+//     }
 
-    return numStr
-}
+//     return numStr
+// }
 
-console.log(numInStr(["1a", "a", "2b", "b"]))
+// console.log(numInStr(["1a", "a", "2b", "b"]))
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Given a string, reverse all the words which have odd length. The even length words are not changed.
+
+// Ex: reverseOdd("Bananas") returns "sananaB"
+// Ex: reverseOdd("One two three four") returns "eno owt eerht four"
+
+// function reverseHelper(str) {
+//     return str.split("").reverse().join("")
+
+// }
+
+// function reverseOdd(str) {
+//     let reversed = []
+//     let split = str.split(" ")
+//     for (let i = 0; i < split.length; i++) {
+//         if (split[i].length % 2 != 0) {
+//             reversed.push(reverseHelper(split[i]))
+//         } else {
+//             reversed.push(split[i])
+//         }
+//     }
+//     return reversed.join(" ")
+// }
+
+// console.log(reverseOdd("One two three four"))
+
+////////////////////////////////////////////////////////////////////////////
+
