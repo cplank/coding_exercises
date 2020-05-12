@@ -966,3 +966,142 @@ const GUEST_LIST = {
 
 ////////////////////////////////////////////////////////////////////////////
 
+// function singleNumber(nums) {
+//     var numObj = nums.reduce((obj, number) => {
+//         if (!obj[number]) {
+//             obj[number] = 1
+//         } else {
+//             obj[number]++
+//         }
+//         return obj;
+//     }, {})
+
+//     for (var key in numObj) {
+//         let value = numObj[key]
+//         if (value === 1) {
+//             return key;
+//         }
+//     }
+
+// }
+
+
+// // console.log(singleNumber([2, 2, 1]));
+
+
+// function reverse(x) {
+//     var str = x.toString();
+//     var newStr = "";
+
+//     if (Math.sign(x) === -1) {
+//         newStr = "-";
+//     }
+
+//     for (var i = str.length - 1; i >= 0; i--) {
+//         newStr += str[i];
+//     }
+
+//     var reversed = parseFloat(newStr);
+//     if (reversed < (Math.pow(2, 31) * -1) || reversed > Math.pow(2, 31) - 1) {
+//         return 0
+//     } else {
+//         return reversed
+//     }
+
+
+// };
+
+// console.log(reverse(-123))
+
+function isHappy(num) {
+    // let isHappy = false;
+    // let allNums = [];
+    // while (!isHappy) {
+    //     let numArr = num.toString(10).split("").map(function (t) { return parseInt(t) });
+    //     let numReduce = numArr.reduce((total, number) => {
+    //         return total + Math.pow(number, 2);
+    //     }, 0);
+    //     if (numReduce === 1) {
+    //         isHappy = true;
+    //     } else if (allNums.includes(numReduce)) {
+    //         return false;
+    //     } else {
+    //         if (allNums.includes(numReduce)) {
+    //             num = numReduce
+    //         } else {
+    //             allNums.push(numReduce)
+    //             num = numReduce
+    //         }
+    //     }
+    // }
+    // return isHappy;
+
+}
+
+// console.log(isHappy(2))
+// function isPalindrome(x) {
+//     let str = x.toString();
+//     let newStr = "";
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         newStr += str[i];
+//     }
+
+//     if (str === newStr) {
+//         return true
+//     } else {
+//         return false
+
+//     }
+// };
+
+// console.log(isPalindrome(121))
+
+// function romantToInt(s) {
+//     var stringArr = s.split("");
+//     var total = 0;
+//     for (let i = 0; i < stringArr.length; i++) {
+//         if (stringArr[i] === "V") {
+//             total += 5;
+//         }
+//         if (stringArr[i] === "X") {
+//             if (i === stringArr.length - 1) {
+//                 total += 10;
+//             } else if (stringArr[i + 1] != "L" && stringArr[i + 1] != "C") {
+//                 total += 10
+//             } else {
+//                 total -= 10
+//             }
+//         }
+//         if (stringArr[i] === "L") {
+//             total += 50;
+//         }
+//         if (stringArr[i] === "C") {
+//             if (i === stringArr.length - 1) {
+//                 total += 100;
+//             } else if (stringArr[i + 1] != "D" && stringArr[i + 1] != "M") {
+//                 total += 100
+//             } else {
+//                 total -= 100
+//             }
+//         }
+//         if (stringArr[i] === "D") {
+//             total += 500;
+//         }
+//         if (stringArr[i] === "M") {
+//             total += 1000;
+//         }
+//         if (stringArr[i] === "I") {
+//             if (i === stringArr.length - 1) {
+//                 total += 1;
+//             } else if (stringArr[i + 1] != "X" && stringArr[i + 1] != "V") {
+//                 total += 1
+//             } else {
+//                 total -= 1
+//             }
+//         }
+//     }
+//     console.log("final total", total)
+//     return total;
+// }
+
+// romantToInt("MCMXCIV");
