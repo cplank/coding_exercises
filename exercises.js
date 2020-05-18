@@ -1105,3 +1105,48 @@ function isHappy(num) {
 // }
 
 // romantToInt("MCMXCIV");
+
+// Write a function to find the longest common prefix strin amongst an array of string. 
+//If there is no common prefix, return an empty string "".
+
+//Ex: Input: ["flower", "flow", "flight"]
+//Output: "fl"
+
+// function longestCommonPrefix(strs) {
+//     if (strs.length < 1) {
+//         return ""
+//     }
+
+//     let compare = strs[0];
+
+//     for (var i = 1; i < strs.length; i++) {
+//         compare = compareChars(compare, strs[i])
+//     }
+//     return compare;
+// }
+
+// function compareChars(compare, str) {
+//     var newCompare = "";
+//     if (compare < str.length) {
+//         for (var i = 0; i < compare; i++) {
+//             if (compare[i] === str[i]) {
+//                 newCompare += str[i];
+//             } else {
+//                 return newCompare
+//             }
+//         }
+//     } else {
+//         for (var i = 0; i < str.length; i++) {
+//             if (str[i] === compare[i]) {
+//                 newCompare += str[i]
+//             } else {
+//                 return newCompare
+//             }
+//         }
+//     }
+//     return newCompare
+// }
+
+// // longestCommonPrefix(["flower", "flow", "flight"])
+// // longestCommonPrefix(["dog", "racecar", "apple"])
+// longestCommonPrefix([]);
