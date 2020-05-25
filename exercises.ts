@@ -1153,11 +1153,17 @@ function isHappy(num) {
 ////////////////////////////////////////////
 ////     TREES                      ////////
 ////////////////////////////////////////////
-
+type nodeFn<T> = (node: BTN<T>) => void
 class BTN<T> {
     item: T;
     leftBranch: BTN<T> | null;
     rightBranch: BTN<T> | null;
+
+    constructor(item, leftBranch, rightBranch) {
+        this.item = item;
+        this.leftBranch = leftBranch;
+        this.rightBranch = rightBranch;
+    }
 
     printItem() {
         console.log(this.item)
@@ -1200,4 +1206,38 @@ class BTN<T> {
         }
     }
 
+    depthFirst(fn: nodeFn<T>) {
+        fn(this);
+        if (this.leftBranch != null) {
+            this.leftBranch.depthFirst(fn);
+        }
+        if (this.rightBranch != null) {
+            this.rightBranch.depthFirst(fn);
+        }
+    }
+
+    bfHelper(hold: BTN<T>[], counter: number) {
+        //hold.push(this)
+        counter++
+
+        if (this.leftBranch != null) {
+            hold.push(this.leftBranch)
+        }
+        if (this.rightBranch != null) {
+            hold.push(this.rightBranch)
+        }
+        if (hold[counter]) {
+            hold[counter].bfHelper(hold, counter);
+        } else {
+            console.log("end")
+        }
+    }
+
+    breadthFirst(fn: nodeFn<T>) {
+        var hold = [this];
+        var counter = 0;
+        this.bfHelper(hold, counter);
+        hold.forEach(fn);
+
+    }
 }
