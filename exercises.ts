@@ -1,4 +1,4 @@
-//@ts-check
+// @ts-check
 
 // //////////////////////////////////////////////////////
 //                                                     //
@@ -1116,7 +1116,6 @@ function isHappy(num) {
 //     if (strs.length < 1) {
 //         return ""
 //     }
-
 //     let compare = strs[0];
 
 //     for (var i = 1; i < strs.length; i++) {
@@ -1150,3 +1149,55 @@ function isHappy(num) {
 // // longestCommonPrefix(["flower", "flow", "flight"])
 // // longestCommonPrefix(["dog", "racecar", "apple"])
 // longestCommonPrefix([]);
+
+////////////////////////////////////////////
+////     TREES                      ////////
+////////////////////////////////////////////
+
+class BTN<T> {
+    item: T;
+    leftBranch: BTN<T> | null;
+    rightBranch: BTN<T> | null;
+
+    printItem() {
+        console.log(this.item)
+    }
+    leftMostItem(): T {
+        if (this.leftBranch === null) {
+            return this.item
+        }
+        return this.leftBranch.leftMostItem();
+    }
+
+    treeHeight(): number {
+        if (this.leftBranch === null && this.rightBranch === null) {
+            return 1
+        }
+        if (this.leftBranch === null) {
+            return this.rightBranch.treeHeight() + 1;
+        }
+        if (this.rightBranch === null) {
+            return this.leftBranch.treeHeight() + 1;
+        }
+        var left = this.leftBranch.treeHeight();
+        var right = this.rightBranch.treeHeight();
+
+        // if (left < right) {
+        //     return right + 1;
+        // }
+        // return left + 1;
+        return Math.max(left, right) + 1;
+
+    }
+
+    printEverything(): void {
+        console.log(this.item)
+        if (this.leftBranch != null) {
+            this.leftBranch.printEverything();
+        }
+        if (this.rightBranch != null) {
+            this.rightBranch.printEverything();
+        }
+    }
+
+}
