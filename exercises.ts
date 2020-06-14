@@ -285,6 +285,43 @@
 
 // destCity([["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]])
 
+//Find intersection of two linked lists
+
+var getIntersectionNode = function (headA, headB) {
+    var curA = headA;
+    var curB = headB;
+
+    if (headA === null || headB === null) {
+        return null
+    }
+
+    while (curA) {
+        if (loop(curA, headB)) {
+            return curA
+        }
+        curA = curA.next
+    }
+    while (curB) {
+        if (loop(curB, headA)) {
+            return curB
+        }
+        curB = curB.next
+    }
+    return null
+}
+
+function loop(check, head) {
+    var cur = head;
+    while (cur) {
+        if (check === cur) {
+            return true
+        }
+        cur = cur.next
+    }
+    return false
+}
+
+
 
 
 
